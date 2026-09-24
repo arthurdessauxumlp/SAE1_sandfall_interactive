@@ -13,11 +13,6 @@ Le projet consiste à faire un site vitrine pour l'entreprise Sandfall Interacti
 **(https://www.sandfall.co/)**
 
 
-Chronologie :
-
-
-
-
 
 
 
