@@ -1,0 +1,319 @@
+/* ==========================================================================
+   1. STYLES GÉNÉRAUX & BASE
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body, 
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Verdana, sans-serif;
+  background-image: url('images/sandfallBackground.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+img {
+  vertical-align: middle;
+}
+
+
+/* ==========================================================================
+   2. NAVIGATION & DROPDOWN
+   ========================================================================== */
+
+/* Navbar Principale */
+.navbar {
+  display: flex;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #C9AE5D;
+  text-align: center;
+  padding: 1.2vh 1.5vw;
+  text-decoration: none;
+  font-size: clamp(14px, 1.5vw, 18px);
+}
+
+.navbar a img {
+  height: 30px;           /* Ajuste cette valeur selon la hauteur souhaitée (ou utilise des unités relatives comme 4vh) */
+  width: auto;            /* Conserve automatiquement le ratio et les proportions de l'image */
+  vertical-align: middle; /* Aligne proprement l'image avec le texte de la navbar */
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.navbar a:hover, 
+.dropdown:hover .dropbtn {
+  background: #C9AE5D;
+  color: black;
+}
+
+/* Menu Déroulant (Dropdown) */
+.dropbtn {
+  background-color: transparent;
+  color: #C9AE5D;
+  padding: 1.2vh 1.5vw;
+  font-size: clamp(14px, 1.5vw, 18px);
+  border: none;
+  cursor: pointer;
+  font-family: Verdana, sans-serif;
+  text-align: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #C9AE5D;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  float: none; 
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #C9AE5D;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #C9AE5D;
+}
+
+
+/* ==========================================================================
+   3. SECTIONS DE CONTENU & PARALLAX
+   ========================================================================== */
+
+.parallax {
+  background-image: url('sandfallBackground.jpg');
+  height: 30%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Espacement entre les blocs (30% de la hauteur de l'écran) */
+.parallax-spacer {
+  height: 30vh;
+}
+
+/* Blocs de contenu */
+.content-block {
+  background-color: black; /* Fond opaque pour cacher l'image de fond sous le texte */
+  padding: 60px 0 40px;
+  max-width: 1200px;
+  margin: 0 auto; /* Centre le bloc si besoin */
+}
+
+.content-block {
+  padding: 60px 20px 40px; /* Padding haut pour ne pas coller à la navbar */
+  background-color: black;
+  color: #E8CC79;
+  font-size: 18px; /* Réduit à 18px pour une bonne lisibilité (36px était trop grand) */
+}
+.content-block2 {
+
+  width: 78%;
+  margin: 0 auto; /* Centre le bloc si besoin */
+  background-color: white;
+  font-size: 18px;
+}
+
+
+.content-inner{
+	padding: 0 20px;
+}
+
+/* ==========================================================================
+   4. SLIDESHOW
+   ========================================================================== */
+
+.slideshow-container {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+/* Boutons Précédent / Suivant */
+.prev, 
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: #C9AE5D;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background: transparent;
+  border: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, 
+.next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Textes et Légendes */
+.text {
+  color: #C9AE5D;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+/* Points de navigation (Dots) */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  border: none;
+  transition: background-color 0.6s ease;
+}
+
+.active, 
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Animation Fondue (Fade) */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4;
+  } 
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ==========================================================================
+   5. PIED DE PAGE (FOOTER)
+   ========================================================================== */
+
+.site-footer {
+  background-color: black; /* Fond uni, sombre et sobre */
+  color: #C9AE5D;            
+  padding: 1.2vh 3vw;        /* Très peu de padding haut/bas pour qu'il reste très fin */
+  font-size: clamp(12px, 1.1vw, 14px); /* Taille proportionnelle */
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Répartit l'espace de manière égale sur toute la longueur */
+  align-items: center;            /* Aligne parfaitement tout le monde sur la même ligne */
+  flex-wrap: wrap;                /* Permet de passer proprement à la ligne sur les tout petits écrans mobiles */
+  gap: 15px;                      /* Évite que les blocs ne se collent si l'écran rétrécit */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espacement entre les éléments à l'intérieur d'un même bloc */
+}
+
+.site-footer a {
+  color:#C9AE5D;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+  color: #ffffff;
+}
+
+.site-footer p {
+  margin: 0; /* Supprime les marges par défaut des paragraphes pour garder le footer ultra-fin */
+}
+
+
+/* ==========================================================================
+   6. MEDIA QUERIES (RESPONSIVE)
+   ========================================================================== */
+
+@media only screen and (max-width: 300px) {
+  .prev, 
+  .next, 
+  .text {
+    font-size: 11px;
+  }
+}
