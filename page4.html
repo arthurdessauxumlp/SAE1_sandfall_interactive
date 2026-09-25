@@ -1,11 +1,157 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<title>Sandfall interactive</title>
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
+
+<!-- ==========================================================================
+   1. BARRE DE NAVIGATION (NAVBAR & DROPDOWN)
+   ========================================================================== -->
+<nav class="navbar">
+  <!-- Menu déroulant -->
+  <div class="dropdown">
+    <button class="dropbtn">|||</button>
+    <div class="dropdown-content">
+	  <a href="index.html"> Accueil</a>
+      <a href="page2.html">Histoire</a>
+      <a href="page3.html">Contact</a>
+	  <a href="page4.html">Economie</a>
+      <a href="page5.html">Identité Artistique</a>
+    </div>
+  </div>
+
+  <a href="https://www.sandfall.co/" target="_blank"> Site officiel</a>
+  <a href="page3.html">Contact</a>
+</nav>
+
+
+
+
+
+   
+
+<!-- ==========================================================================
+   3. SEPARATION & DEUXIÈME SECTION
+   ========================================================================== -->
+<!-- Espacement visuel effet parallaxe -->
+<div class="parallax-spacer"></div>
+
+<section class="content-block">
+  <h1>Sandfall Interactive</h1>
     
+  <p>Sandfall Interactive, basé à Montpellier, s'est imposé comme l'un des plus grands phénomènes d'efficacité économique de l'industrie moderne du jeu vidéo. Fondé en 2020 par Guillaume Broche, Tom Guillermin et François Meurisse, ce studio indépendant a bousculé les standards financiers mondiaux grâce au triomphe retentissant de son premier titre, Clair Obscur: Expedition 33 (sorti en avril 2025). Le jeu a marqué l'histoire en réalisant un grand chelem historique de 9 récompenses lors des Game Awards 2025, dont le titre de Jeu de l'Année (GOTY,</p>
+   <h1>Performances commerciales et impact économique</h1>
+    <p>La pertinence économique de Sandfall Interactive a grimpé en flèche à la suite de la sortie de son premier jeu, Clair Obscur : Expedition 33 (sorti le 24 avril 2025).Ce projet est devenu un véritable cas d'école de rentabilité financière dans l'industrie<br>La réussite économique et artistique de Sandfall Interactive a redéfini les attentes du marché vis-à-vis des productions AA. Cette trajectoire a été saluée par de prestigieuses distinctions, incluant le titre de Studio de l'année aux Golden Joystick Awards 2025, ainsi que plusieurs nominations et récompenses aux Pégases et aux BAFTA Games Awards en 2026. Preuve de leur impact culturel, 28 membres de l'équipe ont été nommés Chevaliers de l'Ordre des Arts et des Lettres par le ministère de la Culture français au début de l'année 2026.
+Commercialisé depuis le 24 avril dernier, le jeu vidéo "Clair Obscur : Expedition 33", première réalisation du studio indépendant montpelliérain Sandfall Interactive (20 salariés), effectue un démarrage fulgurant. Après s’être rapidement écoulé à 500 000 exemplaires, il vient de franchir le seuil du million de ventes (numériques et physiques) dans le monde en seulement trois jours. Sur Steam, première plateforme mondiale du jeu vidéo sur PC, le nombre d’utilisateurs a bondi à 120 000. L’accueil critique est à l’avenant : le jeu atteindrait déjà la plus forte moyenne jamais recensée sur la plateforme Metacritic. Fruit de 5 ans de labeur, "Clair Obscur" est un jeu de rôle fantastique, dont le style graphique s’inspire de la France de la Belle Époque. Il a mobilisé 30 développeurs salariés et freelance au sein de Sandfall Interactive, pour un budget proche de 10 millions d’euros. Le studio montpelliérain travaille déjà sur son adaptation au cinéma, en lien avec un partenaire américain.</p>
+   
+</section>
+
+<div class="parallax-spacer"></div>
+
+<section class="content-block">
+    <h1>Structure d'entreprise et philosophie de croissance</h1> 
+    <p> • Taille humaine : Sandfall Interactive se positionne dans la catégorie des petites et moyennes entreprises (PME). L'équipe est passée d'un noyau initial de 6 personnes à environ 34 employés basés à Montpellier. </br>
+    • Modèle économique : Développement de jeux vidéo premium en 3D (dits "Double A" ou AA) axés sur des expériences narratives en solo (single-player) pour PC et consoles de nouvelle génération. </p>
+</section>
+
+
+<!-- Image de fond parallaxe finale -->
+<div class="parallax"></div>
+<script>
+/* ==========================================================================
+   1. INITIALISATION DU CARROUSEL
+   ========================================================================== */
+
+// Indice de la diapositive actuellement affichée (commence à 1)
+let slideIndex = 1;
+
+// Lancement du carrousel au chargement de la page
+showSlides(slideIndex);
+
+
+/* ==========================================================================
+   2. FONCTIONS DE NAVIGATION (ÉVÉNEMENTS)
+   ========================================================================== */
+
+/**
+ * Avance ou recule d'un nombre 'n' de diapositives (boutons Précédent / Suivant)
+ */
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+/**
+ * Affiche directement la diapositive 'n' (clic sur un point de navigation)
+ */
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+
+/* ==========================================================================
+   3. MOTEUR D'AFFICHAGE DU SLIDESHOW
+   ========================================================================== */
+
+/**
+ * Gère le masquage/affichage des images et la mise à jour des points de navigation
+ */
+function showSlides(n) {
+  // Récupération de tous les éléments du slider dans le DOM
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  
+  // Boucle de défilement : si on dépasse la dernière image, on revient à la première
+  if (n > slides.length) { 
+    slideIndex = 1; 
+  }    
+  
+  // Si on remonte avant la première image, on passe à la dernière
+  if (n < 1) { 
+    slideIndex = slides.length; 
+  }
+  
+  // Masque toutes les diapositives
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  
+  // Retire la classe "active" de tous les points de navigation
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  
+  // Affiche la diapositive courante et active le point correspondant
+  slides[slideIndex - 1].style.display = "block";  
+  dots[slideIndex - 1].className += " active";
+}
+</script>
+
 </body>
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Bloc 1 : Identité -->
+    <div class="footer-item brand">
+      <span>SAE S1. 05-06 - IUT NFC</span>
+    </div>
+
+    <!-- Bloc 2 : Liens de navigation -->
+    <div class="footer-item links">
+      <a href="index.html" >Accueil</a>
+      <a href="page3.html" >Contact</a>
+    </div>
+
+  
+    
+    <!-- Bloc 3 Signature -->
+    <div class="footer-item copyright">
+      <p> Page de :Adriana Suarez Oviedo  </p>
+    </div>
+  </div>
+</footer>
 </html>
