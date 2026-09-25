@@ -1,12 +1,190 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<title>Sandfall interactive</title>
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<!-- ==========================================================================
+   1. BARRE DE NAVIGATION (NAVBAR & DROPDOWN)
+   ========================================================================== -->
+<nav class="navbar">
+  <!-- Menu déroulant -->
+  <div class="dropdown">
+    <button class="dropbtn">|||</button>
+    <div class="dropdown-content">
+	  <a href="index.html"> Accueil</a>
+      <a href="page2.html">Histoire</a>
+      <a href="page3.html">Contact</a>
+	  <a href="page4.html">Economie</a>
+      <a href="page5.html">Identité Artistique</a>
+    </div>
+  </div>
+
+  <a href="https://www.sandfall.co/" target="_blank"> Site officiel</a>
+  <a href="page3.html">Contact</a>
+</nav>
+
+
+
+
+
+   
+
+<!-- ==========================================================================
+   3. SEPARATION & DEUXIÈME SECTION
+   ========================================================================== -->
+<!-- Espacement visuel effet parallaxe -->
+<div class="parallax-spacer"></div>
+
+<section class="content-block">
+ <form>
+        <fieldset>
+            <div class="form-group">
+                <input type="text" id="id_name" name="name" value="votre nom">
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="text" id="id_mail" name="mail" value="votre email">
+                </div>
+                <div class="col">
+                    <input type="text" id="id_tel" name="tel" value="votre numéro">
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" id="id_entreprise" name="entreprise" value="votre entreprise">
+            </div>
+            <div class="form-group">
+                <input type="text" id="id_mesage" name="mesage" value="entrer votre mesage">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="envoyer">
+            </div>
+        </fieldset>
+        <h5>notre adresse</h5>
+        <p> 28 avenue de Lodève, 34000 Montpellier</p>
+    </form>
+</section>
+
+<div class="parallax-spacer"></div>
+
+<section class="content-block">
+<form>
+        <fieldset>
+            <div class="form-group">
+                <input type="text" id="id_name" name="name" value="votre nom">
+            </div>
+            <div class="form-group">
+                <input list="metier" id="id_metier" name="metier" value="votre metier">
+                <datalist id="metier">
+                    <option value="devlopeur"></option>
+                    <option value="porgameur"></option>
+                    <option value="designeur"></option>
+                    <option value="comunicateur"></option>
+                </datalist>
+            </div>
+            <div class="form-group">
+                <input type="text" id="id_motivtion" name="motivtion" value="votre letre motivtion">
+            </div>
+        </fieldset>
+    </form>
+</section>
+
+<!-- Image de fond parallaxe finale -->
+<div class="parallax"></div>
+<script>
+/* ==========================================================================
+   1. INITIALISATION DU CARROUSEL
+   ========================================================================== */
+
+// Indice de la diapositive actuellement affichée (commence à 1)
+let slideIndex = 1;
+
+// Lancement du carrousel au chargement de la page
+showSlides(slideIndex);
+
+
+/* ==========================================================================
+   2. FONCTIONS DE NAVIGATION (ÉVÉNEMENTS)
+   ========================================================================== */
+
+/**
+ * Avance ou recule d'un nombre 'n' de diapositives (boutons Précédent / Suivant)
+ */
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+/**
+ * Affiche directement la diapositive 'n' (clic sur un point de navigation)
+ */
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+
+/* ==========================================================================
+   3. MOTEUR D'AFFICHAGE DU SLIDESHOW
+   ========================================================================== */
+
+/**
+ * Gère le masquage/affichage des images et la mise à jour des points de navigation
+ */
+function showSlides(n) {
+  // Récupération de tous les éléments du slider dans le DOM
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  
+  // Boucle de défilement : si on dépasse la dernière image, on revient à la première
+  if (n > slides.length) { 
+    slideIndex = 1; 
+  }    
+  
+  // Si on remonte avant la première image, on passe à la dernière
+  if (n < 1) { 
+    slideIndex = slides.length; 
+  }
+  
+  // Masque toutes les diapositives
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  
+  // Retire la classe "active" de tous les points de navigation
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  
+  // Affiche la diapositive courante et active le point correspondant
+  slides[slideIndex - 1].style.display = "block";  
+  dots[slideIndex - 1].className += " active";
+}
+</script>
 
 </body>
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Bloc 1 : Identité -->
+    <div class="footer-item brand">
+      <span>SAE S1. 05-06 - IUT NFC</span>
+    </div>
+
+    <!-- Bloc 2 : Liens de navigation -->
+    <div class="footer-item links">
+      <a href="index.html" >Accueil</a>
+      <a href="page3.html" >Contact</a>
+    </div>
+
+  
+    
+    <!-- Bloc 3 Signature -->
+    <div class="footer-item copyright">
+      <p> Page de : TOM  </p>
+    </div>
+  </div>
+</footer>
 </html>

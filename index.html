@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<title>Sandfall interactive</title>
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ==========================================================================
+   1. BARRE DE NAVIGATION (NAVBAR & DROPDOWN)
+   ========================================================================== -->
+<nav class="navbar">
+  <!-- Menu déroulant -->
+  <div class="dropdown">
+    <button class="dropbtn">|||</button>
+    <div class="dropdown-content">
+	  <a href="index.html">Accueil</a>
+      <a href="page2.html">Histoire</a>
+      <a href="page3.html">Contact</a>
+	  <a href="page4.html">Economie</a>
+      <a href="page5.html">Identité Artistique</a>
+    </div>
+  </div>
+
+  <a href="https://www.sandfall.co/" target="_blank"> Site officiel</a>
+  <a href="page3.html">Contact</a>
+</nav>
+
+<!-- ==========================================================================
+   2. PREMIÈRE SECTION DE CONTENU (PARALLAXE & SLIDESHOW)
+   ========================================================================== -->
+<div class="content-block2">
+  <header class="parallax"></header>
+
+  <!-- Carrousel d'images -->
+  <div class="slideshow-container">
+    <!-- Diapositive 1 -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="images/SandfallInteractive.jpg" style="width:100%" alt="Chat mignon 1">
+      <div class="text">Studio français de développement de jeu vidéo</div>
+    </div>
+
+    <!-- Diapositive 2 -->
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="images/chienMignon1.jpg" style="width:100%" alt="Chien mignon 1">
+      <div class="text">Création de jeux vidéo narratifs et immersifs</div>
+    </div>
+
+    <!-- Diapositive 3 -->
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="images/owl1.jpg" style="width:100%" alt="Chouette 1">
+      <div class="text">Développement sous Unreal Engine 5</div>
+    </div>
+
+    <!-- Boutons de contrôle (Précédent / Suivant) -->
+    <button type="button" class="prev" onclick="plusSlides(-1)" aria-label="Image précédente">❮</button>
+    <button type="button" class="next" onclick="plusSlides(1)" aria-label="Image suivante">❯</button>
+  </div>
+
+
+  
+
+  
+  
+</div>
+
+<!-- ==========================================================================
+   3. SEPARATION & DEUXIÈME SECTION
+   ========================================================================== -->
+<!-- Espacement visuel effet parallaxe -->
+<div class="parallax-spacer"></div>
+
+<!-- Deuxième bloc de contenu -->
+<section class="content-block">
+  <h2>Présentation du projet</h2>
+  <p>Bienvenue sur la page d'accueil de notre site dédié à l'entreprise <strong>Sandfall Interactive</strong>, réalisé dans le cadre de la SAE 56.
+  </p>
+  <p>
+  <strong>Sandfall Interactive</strong> est un studio indépendant français de développement de jeux vidéo basé à Montpellier. Fondé par des passionnés de l'industrie, le studio se distingue par sa volonté de créer des expériences narratives riches, immersives et visuellement saisissantes destinées aux consoles de nouvelle génération et au PC.
+</p>
+<p>
+  À travers la réalisation de ce site web, notre équipe s'est donnée pour objectif d'analyser le positionnement, la stratégie technique sous <strong>Unreal Engine 5</strong>, ainsi que l'identité créative de ce studio prometteur du paysage vidéoludique français.
+</p>
+</section>
+
+<div class="parallax-spacer"></div>
+
+<section class="content-block">
+<h2>Organisation du travail</h2>
+<p>
+  Ce site web regroupe les travaux réalisés par l'ensemble de notre équipe. Pour mener à bien ce projet, chaque membre du groupe a pris en charge la création et la rédaction d'une page spécifique.
+</p>
+<p>
+  Vous pouvez naviguer entre les différentes pages du site à l'aide des liens présentés dans le menu en haut de page.
+</p>
+</section>
+
+<!-- Image de fond parallaxe finale -->
+<div class="parallax"></div>
+<script>
+/* ==========================================================================
+   1. INITIALISATION DU CARROUSEL
+   ========================================================================== */
+
+// Indice de la diapositive actuellement affichée (commence à 1)
+let slideIndex = 1;
+
+// Lancement du carrousel au chargement de la page
+showSlides(slideIndex);
+
+
+/* ==========================================================================
+   2. FONCTIONS DE NAVIGATION (ÉVÉNEMENTS)
+   ========================================================================== */
+
+/**
+ * Avance ou recule d'un nombre 'n' de diapositives (boutons Précédent / Suivant)
+ */
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+/**
+ * Affiche directement la diapositive 'n' (clic sur un point de navigation)
+ */
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+
+/* ==========================================================================
+   3. MOTEUR D'AFFICHAGE DU SLIDESHOW
+   ========================================================================== */
+
+/**
+ * Gère le masquage/affichage des images et la mise à jour des points de navigation
+ */
+function showSlides(n) {
+  // Récupération de tous les éléments du slider dans le DOM
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  
+  // Boucle de défilement : si on dépasse la dernière image, on revient à la première
+  if (n > slides.length) { 
+    slideIndex = 1; 
+  }    
+  
+  // Si on remonte avant la première image, on passe à la dernière
+  if (n < 1) { 
+    slideIndex = slides.length; 
+  }
+  
+  // Masque toutes les diapositives
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  
+  // Retire la classe "active" de tous les points de navigation
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  
+  // Affiche la diapositive courante et active le point correspondant
+  slides[slideIndex - 1].style.display = "block";  
+  dots[slideIndex - 1].className += " active";
+}
+</script>
+
+</body>
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Bloc 1 : Identité -->
+    <div class="footer-item brand">
+      <span>SAE S1. 05-06 - IUT NFC</span>
+    </div>
+
+    <!-- Bloc 2 : Liens de navigation -->
+    <div class="footer-item links">
+      <a href="index.html" >Accueil</a>
+      <a href="page3.html" >Contact</a>
+    </div>
+
+  
+    
+    <!-- Bloc 3 Signature -->
+    <div class="footer-item copyright">
+      <p> Page de : Rokhaya FALL  </p>
+    </div>
+  </div>
+</footer>
+</html>
