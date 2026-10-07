@@ -1,4 +1,4 @@
-name: Sync to GitLab and Bitbucket
+name: Sync to GitLab
 
 on:
   push:
@@ -24,11 +24,3 @@ jobs:
           destination-repository-name: 'SAE1_sandfall_interactive'
           user-email: 'arthurdessauxumlp@gmail.com'
           target-branch: 'main'
-
-      - name: Push to Bitbucket
-        uses: test-room-7/action-update-repo@v1
-        with:
-          token: "${{ secrets.BITBUCKET_TOKEN }}"
-          source-repo-url: "https://github.com/arthurdessauxumlp/SAE1_sandfall_interactive.git"
-          destination-repo-url: "https://x-token-auth:${{ secrets.BITBUCKET_TOKEN }}@bitbucket.org/arthurdessauxumlp/sae1_sandfall_interactive.git"
-          branch: "main"
