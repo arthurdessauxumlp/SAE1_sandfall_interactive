@@ -1,0 +1,26 @@
+name: Sync to GitLab
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to GitLab
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.GITLAB_TOKEN }}
+        with:
+          source-directory: '.'
+          destination-github-username: 'arthurdessauxumlp'
+          destination-repository-name: 'SAE1_sandfall_interactive'
+          user-email: 'arthurdessauxumlp@gmail.com'
+          target-branch: 'main'
