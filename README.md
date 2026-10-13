@@ -55,12 +55,12 @@ Vérification W3C : [Liens vers le validateur](https://validator.w3.org/nu/?show
 ### Développement site
 
 - FALL Rokhaya
-    Page d’Accueil
+    -- Page d’Accueil
 - CHELLAH Ilias
-    Page Histoire
+    -- Page Histoire
 - CREUSOT DUC Tom
-    Page Mieux nous connaître
+    -- Page Mieux nous connaître
 - SUAREZ OVIEDO Adriana
-    Page Économie
+    -- Page Économie
 - DESSAUX Arthur 
-    Page Identité artistique et culturelle    
+    -- Page Identité artistique et culturelle    
