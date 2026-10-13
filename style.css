@@ -28,7 +28,6 @@ img {
 /* SECTIONS DE CONTENU & PARALLAX */
 
 .parallax {
-  background-image: url('sandfallBackground.jpg');
   height: 30%; 
   background-attachment: fixed;
   background-position: center;
@@ -217,7 +216,7 @@ img {
 
 /*Side bar */
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Helvetica", sans-serif;
 }
 
 .sidenav {
