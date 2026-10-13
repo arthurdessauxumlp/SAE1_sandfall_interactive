@@ -43,14 +43,9 @@ img {
 /* Blocs de contenu */
 .content-block {
   background-color: black; 
-  padding: 60px 0 40px;
   max-width: 1200px;
   margin: 0 auto; 
-}
-
-.content-block {
-  padding: 60px 20px 40px; 
-  background-color: black;
+  padding: 20px; 
   color: #E8CC79;
   font-size: 18px;
 }
