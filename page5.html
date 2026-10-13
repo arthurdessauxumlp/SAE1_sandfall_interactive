@@ -12,63 +12,96 @@
 <!-- ==========================================================================
    1. BARRE DE NAVIGATION (NAVBAR & DROPDOWN)
    ========================================================================== -->
-<nav class="navbar">
-  <!-- Menu déroulant -->
-  <div class="dropdown">
-    <button class="dropbtn">|||</button>
-    <div class="dropdown-content">
-	  <a href="index.html"> Accueil</a>
+<!--  Menu Sidebar -->
+<span id="openBtn" class="open-btn" onclick="openNav()">&#10095;<br>M<br>E<br>N<br>U<br>&#10095;</span>
+   
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="index.html">Accueil</a>
       <a href="page2.html">Histoire</a>
-      <a href="page3.html">Contact</a>
+      <a href="page3.html">Mieux nous connaître</a>
 	  <a href="page4.html">Economie</a>
-      <a href="page5.html">Identité Artistique</a>
-    </div>
+      <a href="page5.html">Développement</a>
+      <a href="https://www.sandfall.co/" target="_blank"> Site officiel</a>
   </div>
-
-  <a href="https://www.sandfall.co/" target="_blank"> Site officiel</a>
-  <a href="page3.html">Contact</a>
-</nav>
-
-
 
 
 
    
 
-<!-- ==========================================================================
-   3. SEPARATION & DEUXIÈME SECTION
-   ========================================================================== -->
-<!-- Espacement visuel effet parallaxe -->
-<div class="parallax-spacer"></div>
 
+
+<!-- Deuxième bloc de contenu -->
 <section class="content-block">
-  <h1>Identité Artistique</h1>
-  <h2>Une esthétique théâtrale ancrée dans l'art et l'histoire de France</h2>
-  <p>L’identité visuelle de Sandfall Interactive s'ancre profondément dans le patrimoine culturel français, en fusionnant l'élégance architecturale de la Belle Époque avec l'art pictural symboliste. 
-  <br>Pour nourrir cette direction artistique théâtrale et authentique, particulièrement visible dans leur œuvre Clair Obscur: Expedition 33, le studio est allé jusqu’à installer ses locaux dans un manoir montpelliérain du début du XXe siècle, alignant ainsi son environnement créatif avec son esthétique d'époque.</br> Cette approche "Made in France" se traduit par un travail minutieux sur les décors, les asymétries et les contrastes de lumière, prouvant que le romantisme et la grande peinture européenne peuvent réinventer les codes traditionnels de la fantasy.</p>
+	<div class ="media-block">
+		<div class="media-image">
+		<img src="images/Unreal-Engine-5-Interface.jpg" alt="Illustration Sandfall">
+		</div>
+		<div class="media-text">
+		<h1>Développement</h1>
+		<h2>Le Pari Technique : Transition vers Unreal Engine 5</h2>
+		
+		<p>En pleine phase de pré-production, l'équipe de Sandfall Interactive prend une décision déterminante : abandonner Unreal Engine 4 pour basculer sur la toute nouvelle version 5 du moteur. Ce virage stratégique permet au studio de franchir un cap visuel majeur sans avoir à rallonger indéfiniment son calendrier de développement.</p>
+		<p>En s'appuyant sur les technologies intégrées d'Epic Games pour prendre en charge les tâches techniques les plus lourdes, une équipe à taille humaine d'une trentaine de personnes réussit à concevoir des graphismes dignes des plus grands jeux AAA. Dès les premières étapes de création, cette organisation permet de développer et d'adapter le jeu de manière fluide sur PC, PlayStation 5 et Xbox Series.</p>
+		<p></p>
+</div>
+</div>
 </section>
 
 <div class="parallax-spacer"></div>
 
-
 <section class="content-block">
-<h2>L'excellence artisanale célébrée au plus haut niveau de la culture</h2>
-<p>Loin des immenses productions standardisées, l'entreprise revendique une philosophie de studio indépendant à taille humaine, comptant un peu plus d'une trentaine de créateurs passionnés. Ce parti pris artisanal, qui élève le jeu vidéo au rang d'œuvre d'auteur, a valu à Sandfall une reconnaissance nationale exceptionnelle : en février 2026, la quasi-totalité de l'équipe a été élevée au grade de Chevalier de l'Ordre des Arts et des Lettres par le ministère de la Culture français.<br> Cette distinction officielle souligne à quel point leur exigence esthétique outrepasse le simple divertissement pour s'imposer comme un véritable vecteur de la culture et du savoir-faire français à l'international.
-</p></section>
-
+	<div class="media-block reverse">
+		<div class="media-image">
+		<img src="images/lumenONOFF.png" alt="Illustration Sandfall">
+		</div>
+		<div class="media-text">
+			<h1>Les Moteurs Visuels : Nanite, Lumen et Cinématiques</h1>
+			<p>
+			Pour donner vie à l'univers du jeu, le studio tire pleinement parti de la technologie Nanite. Ce système affiche des décors d'une richesse extrême en temps réel, libérant les graphistes de la création manuelle de versions simplifiées pour chaque objet.</p>
+			<p>
+			L'éclairage dynamique Lumen gère quant à lui les reflets et la diffusion de la lumière naturelle sans réglages complexes, ce qui met en valeur l'esthétique "Belle Époque" des environnements. Enfin, l'outil Sequencer orchestre une continuité parfaite : le passage entre l'exploration, les scènes cinématographiques et le déclenchement des combats se fait de façon directe, sans le moindre écran de chargement.
+			</p>
+		</div>
+		</div>
+		</section>
+		
 <div class="parallax-spacer"></div>
 
 <section class="content-block">
-<h2>L'excellence artisanale célébrée au plus haut niveau de la culture</h2>
-<p>Enfin, cette identité artistique s'illustre par une synergie spectaculaire entre la créativité "à la française" et l'innovation technologique de pointe.<br> En exploitant de manière très avancée le moteur Unreal Engine 5 notamment ses outils de géométrie virtualisée Nanite et d'éclairage dynamique Lumen ,
- Sandfall Interactive parvient à un rendu graphique d'ordinaire réservé aux plus grands studios mondiaux. Cette maîtrise technique permet à leurs concepteurs d'opérer avec une précision digne de la haute couture, donnant vie à des personnages et à des décors d'une richesse visuelle inédite pour soutenir leur vision poétique.</p>
-</p></section>
+	<div class="media-block">
+		<div class="media-image">
+		<img src="images/grapheditor.png" alt="Illustration Sandfall">
+		</div>
+		<div class="media-text">
+			<h1>Organisation & Création des Combats</h1>
+			<p>
+			Sur le plan de l'architecture logicielle, le studio fait le choix de conserver la structure d'origine d'Unreal Engine 5 sans trop la modifier. Cette approche permet d'intégrer rapidement les futures mises à jour du moteur d'Epic Games sans risquer de casser le travail déjà accompli.</p>
+			<p>
+			Pour assurer des affrontements dynamiques, la programmation des combats est pensée pour offrir une réactivité maximale, garantissant des fenêtres d'esquive et de parade instantanées. Les designers s'appuient ensuite sur le système de programmation visuelle par blocs (Blueprints), ce qui leur donne toute l'autonomie nécessaire pour concevoir le comportement des monstres, les compétences des héros et la logique des quêtes.</p>
+		</div>
+		</div>
+		</section>
+		
+<div class="parallax-spacer"></div>
+
+<section class="content-block">
+	<div class="media-block reverse">
+		<div class="media-image">
+		<img src="images/framerate.jpg" alt="Illustration Sandfall">
+		</div>
+		<div class="media-text">
+			<h1>Fluidité & Finitions du Jeu</h1>
+			<p>Garantir un jeu visuellement très détaillé exige un travail d'optimisation constant. L'équipe met en place un chargement intelligent des décors pour afficher une image haute définition très nette tout en préservant la mémoire des consoles.</p>
+			<p>Plutôt que de reconstruire chaque élément à partir de zéro, le studio réutilise et adapte des banques d'objets et de textures existantes, gagnant un temps précieux sur la production. Enfin, des tests de performance réguliers permettent d'identifier et d'éliminer immédiatement les causes de ralentissement pour maintenir un affichage fluide à 60 images par seconde.</p></div>
+		</div>
+		</section>
 <!-- Image de fond parallaxe finale -->
 <div class="parallax"></div>
 <script>
-/* ==========================================================================
-   1. INITIALISATION DU CARROUSEL
-   ========================================================================== */
+/*
+   INITIALISATION DU CARROUSEL
+  */
 
 // Indice de la diapositive actuellement affichée (commence à 1)
 let slideIndex = 1;
@@ -77,9 +110,7 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 
-/* ==========================================================================
-   2. FONCTIONS DE NAVIGATION (ÉVÉNEMENTS)
-   ========================================================================== */
+/* 2. FONCTIONS DE NAVIGATION (ÉVÉNEMENTS) */
 
 /**
  * Avance ou recule d'un nombre 'n' de diapositives (boutons Précédent / Suivant)
@@ -96,9 +127,7 @@ function currentSlide(n) {
 }
 
 
-/* ==========================================================================
-   3. MOTEUR D'AFFICHAGE DU SLIDESHOW
-   ========================================================================== */
+/* MOTEUR D'AFFICHAGE DU SLIDESHOW */
 
 /**
  * Gère le masquage/affichage des images et la mise à jour des points de navigation
@@ -131,6 +160,20 @@ function showSlides(n) {
   // Affiche la diapositive courante et active le point correspondant
   slides[slideIndex - 1].style.display = "block";  
   dots[slideIndex - 1].className += " active";
+}
+
+function openNav() {
+  // Ouvre la sidebar
+  document.getElementById("mySidenav").style.width = "250px";
+  // Cache le bouton "MENU" de gauche
+  document.getElementById("openBtn").style.display = "none";
+}
+
+function closeNav() {
+  // Ferme la sidebar
+  document.getElementById("mySidenav").style.width = "0";
+  // Fait réapparaître le bouton "MENU" de gauche
+  document.getElementById("openBtn").style.display = "block";
 }
 </script>
 <footer class="site-footer">

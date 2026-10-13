@@ -13,23 +13,18 @@
 <!-- ==========================================================================
    1. BARRE DE NAVIGATION (NAVBAR & DROPDOWN)
    ========================================================================== -->
-<nav class="navbar">
-  <!-- Menu déroulant -->
-  <div class="dropdown">
-    <button class="dropbtn">|||</button>
-    <div class="dropdown-content">
-	  <a href="index.html"> Accueil</a>
+<!--  Menu Sidebar -->
+<span id="openBtn" class="open-btn" onclick="openNav()">&#10095;<br>M<br>E<br>N<br>U<br>&#10095;</span>
+   
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="index.html">Accueil</a>
       <a href="page2.html">Histoire</a>
       <a href="page3.html">Contact</a>
 	  <a href="page4.html">Economie</a>
-      <a href="page5.html">Identité Artistique</a>
-    </div>
+      <a href="page5.html">Développement</a>
+      <a href="https://www.sandfall.co/" target="_blank"> Site officiel</a>
   </div>
-
-  <a href="https://www.sandfall.co/" target="_blank"> Site officiel</a>
-  <a href="page3.html">Contact</a>
-</nav>
-
 
 
 
@@ -39,8 +34,7 @@
 <!-- ==========================================================================
    3. SEPARATION & DEUXIÈME SECTION
    ========================================================================== -->
-<!-- Espacement visuel effet parallaxe -->
-<div class="parallax-spacer"></div>
+
 
 <section class="content-block">
   <h1>Sandfall Interactive</h1>
@@ -56,7 +50,7 @@ Commercialisé depuis le 24 avril dernier, le jeu vidéo "Clair Obscur : Expedit
 
 <section class="content-block">
     <h1>Structure d'entreprise et philosophie de croissance</h1> 
-    <p> • Taille humaine : Sandfall Interactive se positionne dans la catégorie des petites et moyennes entreprises (PME). L'équipe est passée d'un noyau initial de 6 personnes à environ 34 employés basés à Montpellier. </br>
+    <p> • Taille humaine : Sandfall Interactive se positionne dans la catégorie des petites et moyennes entreprises (PME). L'équipe est passée d'un noyau initial de 6 personnes à environ 34 employés basés à Montpellier. <br>
     • Modèle économique : Développement de jeux vidéo premium en 3D (dits "Double A" ou AA) axés sur des expériences narratives en solo (single-player) pour PC et consoles de nouvelle génération. </p>
 </section>
 
@@ -64,9 +58,9 @@ Commercialisé depuis le 24 avril dernier, le jeu vidéo "Clair Obscur : Expedit
 <!-- Image de fond parallaxe finale -->
 <div class="parallax"></div>
 <script>
-/* ==========================================================================
-   1. INITIALISATION DU CARROUSEL
-   ========================================================================== */
+/*
+   INITIALISATION DU CARROUSEL
+  */
 
 // Indice de la diapositive actuellement affichée (commence à 1)
 let slideIndex = 1;
@@ -75,9 +69,7 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 
-/* ==========================================================================
-   2. FONCTIONS DE NAVIGATION (ÉVÉNEMENTS)
-   ========================================================================== */
+/* 2. FONCTIONS DE NAVIGATION (ÉVÉNEMENTS) */
 
 /**
  * Avance ou recule d'un nombre 'n' de diapositives (boutons Précédent / Suivant)
@@ -94,9 +86,7 @@ function currentSlide(n) {
 }
 
 
-/* ==========================================================================
-   3. MOTEUR D'AFFICHAGE DU SLIDESHOW
-   ========================================================================== */
+/* MOTEUR D'AFFICHAGE DU SLIDESHOW */
 
 /**
  * Gère le masquage/affichage des images et la mise à jour des points de navigation
@@ -130,9 +120,23 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";  
   dots[slideIndex - 1].className += " active";
 }
+
+function openNav() {
+  // Ouvre la sidebar
+  document.getElementById("mySidenav").style.width = "250px";
+  // Cache le bouton "MENU" de gauche
+  document.getElementById("openBtn").style.display = "none";
+}
+
+function closeNav() {
+  // Ferme la sidebar
+  document.getElementById("mySidenav").style.width = "0";
+  // Fait réapparaître le bouton "MENU" de gauche
+  document.getElementById("openBtn").style.display = "block";
+}
 </script>
 
-</body>
+
 <footer class="site-footer">
   <div class="footer-container">
     <!-- Bloc 1 : Identité -->
@@ -154,4 +158,5 @@ function showSlides(n) {
     </div>
   </div>
 </footer>
+</body>
 </html>

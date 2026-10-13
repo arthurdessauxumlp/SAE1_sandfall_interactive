@@ -28,7 +28,6 @@ img {
 /* SECTIONS DE CONTENU & PARALLAX */
 
 .parallax {
-  background-image: url('sandfallBackground.jpg');
   height: 30%; 
   background-attachment: fixed;
   background-position: center;
@@ -44,14 +43,9 @@ img {
 /* Blocs de contenu */
 .content-block {
   background-color: black; 
-  padding: 60px 0 40px;
   max-width: 1200px;
   margin: 0 auto; 
-}
-
-.content-block {
-  padding: 60px 20px 40px; 
-  background-color: black;
+  padding: 20px; 
   color: #E8CC79;
   font-size: 18px;
 }
@@ -217,7 +211,7 @@ img {
 
 /*Side bar */
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Helvetica", sans-serif;
 }
 
 .sidenav {
