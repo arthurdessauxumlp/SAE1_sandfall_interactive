@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,31 +10,20 @@
 </head>
 <body>
 
-<!-- ==========================================================================
-   1. BARRE DE NAVIGATION (NAVBAR & DROPDOWN)
-   ========================================================================== -->
-<nav class="navbar">
-  <!-- Menu déroulant -->
-  <div class="dropdown">
-    <button class="dropbtn">|||</button>
-    <div class="dropdown-content">
-	  <a href="index.html"> Accueil</a>
+<!--  Menu Sidebar -->
+<span id="openBtn" class="open-btn" onclick="openNav()">&#10095;<br>M<br>E<br>N<br>U<br>&#10095;</span>
+   
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="index.html">Accueil</a>
       <a href="page2.html">Histoire</a>
       <a href="page3.html">Contact</a>
 	  <a href="page4.html">Economie</a>
-      <a href="page5.html">Identité Artistique</a>
-    </div>
+      <a href="page5.html">Développement</a>
+      <a href="https://www.sandfall.co/" target="_blank"> Site officiel</a>
   </div>
 
-  <a href="https://www.sandfall.co/" target="_blank"> Site officiel</a>
-  <a href="page3.html">Contact</a>
-</nav>
 
-
-
-
-
-   
 
 <!-- ==========================================================================
    3. SEPARATION & DEUXIÈME SECTION
@@ -41,30 +31,89 @@
 <!-- Espacement visuel effet parallaxe -->
 <div class="parallax-spacer"></div>
 
+
 <section class="content-block">
-  <!-- Bloc de contenu -->
-   <h2>La naissance de Sandfall Interactive</h2>
-   <p>
-    Fondé en France en 2020, Sandfall Interactive est un studio indépendant de développement de jeux vidéo. Dès sa création, l’objectif du studio est de concevoir des jeux ambitieux tout en conservant la liberté créative et la souplesse d’une équipe à taille humaine. Sandfall Interactive se distingue notamment par son intérêt pour les univers fantastiques, la narration et les expériences de jeu en solo.
+	<div class ="media-block">
+		<div class="media-image">
+		<img src="images/Image1Histoire.jpeg" alt="Illustration Sandfall">
+		</div>
+		<div class="media-text">
+		<h1>La naissance de Sandfall Interactive</h1>
+		<p>
+    Fondé en France en 2020, Sandfall Interactive est un studio indépendant crée par Guillaume Broche qui s'est concentré sur le développement de jeux vidéo. 
+    Dès leur création, ils ont privilégiés la création de jeux ambitieux sans perdre leur liberté créative ainsi que leur souplesse d'avoir une équipe à taille humaine. 
+    C'est le point de départ et objectif de ce studio : <strong>"Rêver grand, tous ensemble"</strong>
    </p>
+   <p>
+    Dès ces débuts, basé à Montpellier, le studio se retrouve plutôt limité comparé aux grands studios mais il compense en s'appuyant sur la créativité, la passion, les possibilités offertes par Unreal Engine 5 ainsi que les compétences de leurs différents développeurs, artistes et scénaristes.
+   </p>
+    </div>
+  </div>
 </section>
 
 <div class="parallax-spacer"></div>
 
 <section class="content-block">
-<!-- Deuxième bloc de contenu -->
- <h2>De jeune studio à succès international</h2>
- <p>
-    L’histoire de Sandfall Interactive est principalement marquée par le développement de son premier jeu, Clair Obscur: Expedition 33. Imaginé notamment par Guillaume Broche, fondateur et directeur créatif du studio, le projet s’est développé progressivement avec la constitution d’une équipe de développeurs, artistes, scénaristes et musiciens. Sorti le 24 avril 2025, le jeu a permis à Sandfall Interactive de se faire connaître à l’échelle internationale et représente une étape majeure dans l’histoire du studio.
- </p>
+	<div class="media-block reverse">
+		<div class="media-image">
+		<img src="images/Image2Histoire.jpeg" alt="Illustration Sandfall">
+		</div>
+		<div class="media-text">
+			<h1>Organisation du travail</h1>
+			<p>
+          Le 24 avril 2025, Sandfall Interactive franchit un grand cap de son histoire avec la sortie de son tout premier jeu vidéo, Clair Obscur: Expedition 33.
+          Après 5 ans de développement, il se distingue par son univers artistique inspiré de la Belle Époque, un scénario émouvant et captivant, sa bande-son accrocheuse et sublime
+          et son système de combat dynamique et sensationnelle. Lors de sa sortie, le succès est immédiat, international et accueilli par la critique comme une véritable prouesse. 
+          Dépassant le million de copies vendues en seulement 3 jours, 2 millions en 12 jours et franchissant le cap des 5 millions de ventes en 6 mois.
+      </p>
+      <p>
+        Suite au succès colossale du jeu, arrive une cérémonie des plus importantes pour le studio français : <strong>Les Game Awards</strong>, cérémonie qui récompense, à travers
+        divers catégories, les meilleurs jeux vidéo de l'année. Le studio connait alors un succès retentissant avec 9 awards gagnés sur 12 nominations :
+      </p>
+      <p><strong>Jeu de l'Année (GOTY 2025) -- Meilleure Direction de jeu -- Meilleure Narration -- Meilleur Bande Original et Musique -- Meilleur Jeu de Rôle -- Meilleur Jeu Indépendant -- 
+        Meilleur Premier Jeu Indépendant -- Meilleur Performance d'Acteur (Jennifer English)
+      </strong></p>
+      <p>
+        En quelques mois, Sandfall Interactive passe ainsi du statut de jeune studio indépendant montpelliérain à celui d'acteur reconnu de l'industrie mondiale du jeu vidéo. Son parcours démontre qu'une équipe française à taille humaine peut rivaliser avec les grandes productions internationales grâce à une direction artistique affirmée, une vision créative originale et un projet ambitieux.
+      </p>
+	  </div>
+	</div>
 </section>
+
+<div class="parallax-spacer"></div>
+
+<section class="content-block">
+	<div class ="media-block">
+		<div class="media-image">
+		<img src="images/Image3Histoire.jpeg" alt="Illustration Sandfall">
+		</div>
+		<div class="media-text">
+		<h1>Made in France - Avenir français</h1>
+		<p>
+      Malgré son succès international, Sandfall Interactive reste profondément attaché à ses origines françaises. Installé à Montpellier, le studio revendique une identité artistique inspirée du patrimoine culturel français, particulièrement visible dans Clair Obscur: Expedition 33.
+    </p>
+    <p>
+      L'univers du jeu puise notamment son inspiration dans la Belle Époque, l'Art déco et l'architecture parisienne. La ville fictive de Lumière, inspirée de Paris, illustre cette volonté de mettre en avant une esthétique française tout en proposant un univers fantastique original.
+    </p>
+    <p>
+      Fort du succès de son premier jeu, Sandfall Interactive aborde désormais une nouvelle étape de son développement. Sa reconnaissance mondiale lui ouvre de nouvelles perspectives, tout en soulevant un défi majeur : continuer à créer des jeux ambitieux sans perdre son indépendance et son identité créative.
+    </p>
+    <p>
+      <strong>
+        L'avenir du studio reste encore à écrire. Si ses prochains projets n'ont pas été entièrement dévoilés, Sandfall Interactive incarne déjà le potentiel du jeu vidéo français sur la scène internationale et pourrait contribuer à renforcer son rayonnement dans les années à venir.
+      </strong>
+    </p>
+    </div>
+  </div>
+</section>
+
 
 <!-- Image de fond parallaxe finale -->
 <div class="parallax"></div>
 <script>
-/* ==========================================================================
-   1. INITIALISATION DU CARROUSEL
-   ========================================================================== */
+/*
+   INITIALISATION DU CARROUSEL
+  */
 
 // Indice de la diapositive actuellement affichée (commence à 1)
 let slideIndex = 1;
@@ -73,9 +122,7 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 
-/* ==========================================================================
-   2. FONCTIONS DE NAVIGATION (ÉVÉNEMENTS)
-   ========================================================================== */
+/* 2. FONCTIONS DE NAVIGATION (ÉVÉNEMENTS) */
 
 /**
  * Avance ou recule d'un nombre 'n' de diapositives (boutons Précédent / Suivant)
@@ -92,9 +139,7 @@ function currentSlide(n) {
 }
 
 
-/* ==========================================================================
-   3. MOTEUR D'AFFICHAGE DU SLIDESHOW
-   ========================================================================== */
+/* MOTEUR D'AFFICHAGE DU SLIDESHOW */
 
 /**
  * Gère le masquage/affichage des images et la mise à jour des points de navigation
@@ -127,6 +172,20 @@ function showSlides(n) {
   // Affiche la diapositive courante et active le point correspondant
   slides[slideIndex - 1].style.display = "block";  
   dots[slideIndex - 1].className += " active";
+}
+
+function openNav() {
+  // Ouvre la sidebar
+  document.getElementById("mySidenav").style.width = "250px";
+  // Cache le bouton "MENU" de gauche
+  document.getElementById("openBtn").style.display = "none";
+}
+
+function closeNav() {
+  // Ferme la sidebar
+  document.getElementById("mySidenav").style.width = "0";
+  // Fait réapparaître le bouton "MENU" de gauche
+  document.getElementById("openBtn").style.display = "block";
 }
 </script>
 
