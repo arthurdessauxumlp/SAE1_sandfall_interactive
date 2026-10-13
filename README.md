@@ -31,62 +31,36 @@ Pour la conception du site, nous nous sommes grandement inspirés du site offici
 
 **Auteur : FALL Rokhaya**  
 
-Vérification W3C : [Liens vers le validateur](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fdemo-am90.github.io%2Fs1-demo%2Findex.html)
+Vérification W3C : [Liens vers le validateur](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Farthurdessauxumlp.github.io%2FSAE1_sandfall_interactive%2F)
+
+<img src="images/Validator.png" style="width=400px" alt="capture ecran sur w3c">
 
 
-![capture d'écran de la conformité de la page ...]()
-
-ou 
-
-<img src="doc/capture_1_W3C.png" style="width=400px" alt="capture ecran sur w3c">
+![capture d'écran sur le site https://www.ecoindex.fr/ pour tester l'éco-conception](images/ecoIndex.png)
 
 
-![capture d'écran sur le site https://www.ecoindex.fr/ pour tester l'éco-conception](doc/capture_1_ecoconcept.png)
-
-ou 
-
-<img src="doc/capture_1_ecoconcept.png" style="width=400px" alt="capture ecran sur ecoconcept pour tester l'éco-conception">
-
-<!--  style="width=400px" ne fonctionne pas -->
-
-### Présentation générale (retiré pour l'instant, à voir si on la garde) 
-
-**Auteur : Nom Prénom**  
-
-Vérification W3C : [Détail ICI](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fdemo-am90.github.io%2Fs1-demo%2Findex.html)
-
-<br>
-<img src="doc/capture_1_W3C.png" width="400px" alt="capture ecran sur ecoconcept">
-
-<br>
-<img src="doc/capture_1_ecoconcept.png" width="400px" alt="capture ecran sur ecoconcept">
 
 ## Répartition du travail
 
 ### Planification - Diagramme de GANTT
 
-- Nom Prénom
+- DESSAUX Arthur
 
 ### Recherches d'informations
 
-- Nom Prénom
-- Nom Prénom
+- FALL Rokhaya
+- SUAREZ OVIEDO Adriana
 
 
 ### Développement site
 
 - FALL Rokhaya
-    Page d’Accueil
+    -- Page d’Accueil
 - CHELLAH Ilias
-    Page Histoire
+    -- Page Histoire
 - CREUSOT DUC Tom
-    Page Mieux nous connaître
+    -- Page Mieux nous connaître
 - SUAREZ OVIEDO Adriana
-    Page Économie
+    -- Page Économie
 - DESSAUX Arthur 
-    Page Identité artistique et culturelle    
-
-
-## Contributeurs
-
-![capture d'écran sur la contribution des membres du projet](doc/livrable2_contributors.png)
+    -- Page Identité artistique et culturelle    
