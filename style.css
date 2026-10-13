@@ -14,7 +14,7 @@ html {
 body {
   margin: 0;
   font-family: "Helvetica", sans-serif;
-  background-image: url('images/image de fond.png');
+  background-image: url('images/background.png');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -37,20 +37,15 @@ img {
 
 /* Espacement entre les blocs pour aérer la page */
 .parallax-spacer {
-  height: 30vh;
+  height: 10vh;
 }
 
 /* Blocs de contenu */
 .content-block {
   background-color: black; 
-  padding: 60px 0 40px;
   max-width: 1200px;
   margin: 0 auto; 
-}
-
-.content-block {
-  padding: 60px 20px 40px; 
-  background-color: black;
+  padding: 20px; 
   color: #E8CC79;
   font-size: 18px;
 }
