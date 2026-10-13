@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. STYLES GÉNÉRAUX & BASE
-   ========================================================================== */
+/* STYLES GÉNÉRAUX & BASE */
 
 * {
   box-sizing: border-box;
@@ -10,13 +8,13 @@ body,
 html {
   height: 100%;
   margin: 0;
-  font-family: Verdana, sans-serif;
+  font-family: "Helvetica", sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: Verdana, sans-serif;
-  background-image: url('images/sandfallBackground.jpg');
+  font-family: "Helvetica", sans-serif;
+  background-image: url('images/image de fond.png');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -27,104 +25,9 @@ img {
   vertical-align: middle;
 }
 
-
-/* ==========================================================================
-   2. NAVIGATION & DROPDOWN
-   ========================================================================== */
-
-/* Navbar Principale */
-.navbar {
-  display: flex;
-  background-color: black;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.navbar a {
-  float: left;
-  display: block;
-  color: #C9AE5D;
-  text-align: center;
-  padding: 1.2vh 1.5vw;
-  text-decoration: none;
-  font-size: clamp(14px, 1.5vw, 18px);
-}
-
-.navbar a img {
-  height: 30px;           /* Ajuste cette valeur selon la hauteur souhaitée (ou utilise des unités relatives comme 4vh) */
-  width: auto;            /* Conserve automatiquement le ratio et les proportions de l'image */
-  vertical-align: middle; /* Aligne proprement l'image avec le texte de la navbar */
-}
-
-.navbar a:hover {
-  background: #ddd;
-  color: black;
-}
-
-.navbar a:hover, 
-.dropdown:hover .dropbtn {
-  background: #C9AE5D;
-  color: black;
-}
-
-/* Menu Déroulant (Dropdown) */
-.dropbtn {
-  background-color: transparent;
-  color: #C9AE5D;
-  padding: 1.2vh 1.5vw;
-  font-size: clamp(14px, 1.5vw, 18px);
-  border: none;
-  cursor: pointer;
-  font-family: Verdana, sans-serif;
-  text-align: center;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: black;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: #C9AE5D;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  float: none; 
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #C9AE5D;
-  color: black;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #C9AE5D;
-}
-
-
-/* ==========================================================================
-   3. SECTIONS DE CONTENU & PARALLAX
-   ========================================================================== */
+/* SECTIONS DE CONTENU & PARALLAX */
 
 .parallax {
-  background-image: url('sandfallBackground.jpg');
   height: 30%; 
   background-attachment: fixed;
   background-position: center;
@@ -132,29 +35,29 @@ img {
   background-size: cover;
 }
 
-/* Espacement entre les blocs (30% de la hauteur de l'écran) */
+/* Espacement entre les blocs pour aérer la page */
 .parallax-spacer {
   height: 30vh;
 }
 
 /* Blocs de contenu */
 .content-block {
-  background-color: black; /* Fond opaque pour cacher l'image de fond sous le texte */
+  background-color: black; 
   padding: 60px 0 40px;
   max-width: 1200px;
-  margin: 0 auto; /* Centre le bloc si besoin */
+  margin: 0 auto; 
 }
 
 .content-block {
-  padding: 60px 20px 40px; /* Padding haut pour ne pas coller à la navbar */
+  padding: 60px 20px 40px; 
   background-color: black;
   color: #E8CC79;
-  font-size: 18px; /* Réduit à 18px pour une bonne lisibilité (36px était trop grand) */
+  font-size: 18px;
 }
 .content-block2 {
 
   width: 78%;
-  margin: 0 auto; /* Centre le bloc si besoin */
+  margin: 0 auto; 
   background-color: white;
   font-size: 18px;
 }
@@ -164,9 +67,7 @@ img {
 	padding: 0 20px;
 }
 
-/* ==========================================================================
-   4. SLIDESHOW
-   ========================================================================== */
+/* SLIDESHOW */
 
 .slideshow-container {
   width: 100%;
@@ -179,7 +80,7 @@ img {
   display: none;
 }
 
-/* Boutons Précédent / Suivant */
+/* Boutons "Précédent" et "Suivant" */
 .prev, 
 .next {
   cursor: pointer;
@@ -221,7 +122,7 @@ img {
 }
 
 .numbertext {
-  color: #f2f2f2;
+  color: #C9AE5D;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
@@ -229,7 +130,7 @@ img {
   text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
-/* Points de navigation (Dots) */
+/* Points de navigation */
 .dot {
   cursor: pointer;
   height: 15px;
@@ -247,7 +148,6 @@ img {
   background-color: #717171;
 }
 
-/* Animation Fondue (Fade) */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -263,24 +163,22 @@ img {
 }
 
 
-/* ==========================================================================
-   5. PIED DE PAGE (FOOTER)
-   ========================================================================== */
+/* PIED DE PAGE (FOOTER) */
 
 .site-footer {
-  background-color: black; /* Fond uni, sombre et sobre */
+  background-color: black; 
   color: #C9AE5D;            
-  padding: 1.2vh 3vw;        /* Très peu de padding haut/bas pour qu'il reste très fin */
-  font-size: clamp(12px, 1.1vw, 14px); /* Taille proportionnelle */
+  padding: 1.2vh 3vw;       
+  font-size: clamp(12px, 1.1vw, 14px); 
   width: 100%;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between; /* Répartit l'espace de manière égale sur toute la longueur */
-  align-items: center;            /* Aligne parfaitement tout le monde sur la même ligne */
-  flex-wrap: wrap;                /* Permet de passer proprement à la ligne sur les tout petits écrans mobiles */
-  gap: 15px;                      /* Évite que les blocs ne se collent si l'écran rétrécit */
+  justify-content: space-between; 
+  align-items: center;            
+  flex-wrap: wrap;                
+  gap: 15px;                      
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -288,7 +186,7 @@ img {
 .footer-item {
   display: flex;
   align-items: center;
-  gap: 15px; /* Espacement entre les éléments à l'intérieur d'un même bloc */
+  gap: 15px; 
 }
 
 .site-footer a {
@@ -302,13 +200,11 @@ img {
 }
 
 .site-footer p {
-  margin: 0; /* Supprime les marges par défaut des paragraphes pour garder le footer ultra-fin */
+  margin: 0;
 }
 
 
-/* ==========================================================================
-   6. MEDIA QUERIES (RESPONSIVE)
-   ========================================================================== */
+/*RESPONSIVE*/
 
 @media only screen and (max-width: 300px) {
   .prev, 
@@ -316,4 +212,102 @@ img {
   .text {
     font-size: 11px;
   }
+}
+
+/*Side bar */
+body {
+  font-family: "Helvetica", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color:#C9AE5D;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Style du bouton fléché pour ouvrir la sidebar */
+.open-btn {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #111;
+  color: #C9AE5D;
+  padding: 15px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 999;
+  border-radius: 0 5px 5px 0;
+  transition: background-color 0.3s;
+}
+
+.open-btn:hover {
+  background-color: #C9AE5D;
+  color: #111;
+}
+
+
+/*Disposition image et texte modulable (media block)*/
+
+.media-block {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Espace entre l'image et le texte */
+  margin: 40px 0;
+  flex-wrap: wrap; /* Passe automatiquement en colonne sur les petits écrans mobiles */
+}
+
+/* Classe pour inverser l'ordre (Texte à gauche / Image à droite) */
+.media-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.media-image {
+  flex: 1;
+  min-width: 280px; /* Évite que l'image ne devienne trop petite */
+}
+
+.media-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px; /* Optionnel : arrondit légèrement les coins */
+  display: block;
+}
+
+.media-text {
+  flex: 1.5; /* Le texte prend un peu plus de place que l'image */
+  min-width: 280px;
 }
