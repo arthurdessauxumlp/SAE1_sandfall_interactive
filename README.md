@@ -31,7 +31,7 @@ Pour la conception du site, nous nous sommes grandement inspirés du site offici
 
 **Auteur : FALL Rokhaya**  
 
-Vérification W3C : [Liens vers le validateur]([https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fdemo-am90.github.io%2Fs1-demo%2Findex.htm](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Farthurdessauxumlp.github.io%2FSAE1_sandfall_interactive%2F)l)
+Vérification W3C : [Liens vers le validateur](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Farthurdessauxumlp.github.io%2FSAE1_sandfall_interactive%2F)
 
 <img src="images/Validator.png" style="width=400px" alt="capture ecran sur w3c">
 
