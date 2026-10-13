@@ -6,29 +6,170 @@
 <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 <title>Sandfall interactive</title>
 <link href="style.css" rel="stylesheet">
+<style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: #13151b;
+            --card-hover: #1a1d26;
+            --accent: #d4af37; /* Doré artistique */
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: rgba(212, 175, 55, 0.15);
+        }
+
+        
+
+        .container_card {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        .team-role {
+            text-align: center;
+        }
+
+        /* Grille des cartes */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        /* Carte individuelle */
+        .team-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            background-color: var(--card-hover);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Conteneur de l'image */
+        .card-img-wrapper {
+            width: 100%;
+            height: 320px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%) contrast(110%);
+            transition: transform 0.6s ease, filter 0.4s ease;
+        }
+
+        .team-card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        /* Effet de dégradé artistique en bas de l'image */
+        .card-img-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(to top, var(--card-bg), transparent);
+            transition: background 0.4s ease;
+        }
+
+        .team-card:hover .card-img-wrapper::after {
+            background: linear-gradient(to top, var(--card-hover), transparent);
+        }
+
+        /* Contenu textuel de la carte */
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        .card-role {
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        /* Liseré décoratif au survol */
+        .card-accent-line {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.4s ease;
+        }
+
+        .team-card:hover .card-accent-line {
+            width: 60%;
+        }
+    </style>
 </head>
 <body>
 
 <!-- ==========================================================================
    1. BARRE DE NAVIGATION (NAVBAR & DROPDOWN)
    ========================================================================== -->
-<nav class="navbar">
-  <!-- Menu déroulant -->
-  <div class="dropdown">
-    <button class="dropbtn">|||</button>
-    <div class="dropdown-content">
-	  <a href="index.html"> Accueil</a>
+<!--  Menu Sidebar -->
+<span id="openBtn" class="open-btn" onclick="openNav()">&#10095;<br>M<br>E<br>N<br>U<br>&#10095;</span>
+   
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="index.html">Accueil</a>
       <a href="page2.html">Histoire</a>
       <a href="page3.html">Contact</a>
 	  <a href="page4.html">Economie</a>
       <a href="page5.html">Identité Artistique</a>
-    </div>
+      <a href="https://www.sandfall.co/" target="_blank"> Site officiel</a>
   </div>
-
-  <a href="https://www.sandfall.co/" target="_blank"> Site officiel</a>
-  <a href="page3.html">Contact</a>
-</nav>
-
 
 
 
@@ -38,10 +179,427 @@
 <!-- ==========================================================================
    3. SEPARATION & DEUXIÈME SECTION
    ========================================================================== -->
-<!-- Espacement visuel effet parallaxe -->
-<div class="parallax-spacer"></div>
+<!-- equipe 1 -->
+        <div class="team-role">
+            <h2>design</h2>
+        </div>
+        <div class="team-grid">
+            <!-- Membre 1 -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <!-- Remplacez l'URL par votre image -->
+                    <img src="https://static.wixstatic.com/media/93b2bd_ac357044e3fb49de9f3920ba0e700c59~mv2.jpg/v1/crop/x_0,y_97,w_1936,h_1793/fill/w_259,h_240,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Guillaume_edited_edited.jpg" ALT="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">GUILLAUME BROCHE</h3>
+                    <p class="card-role">CEO & Creative Director</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
 
-<section class="content-block">
+            <!-- Membre 2 -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_743b9b4b034840cc829f6a3932ce2329~mv2.jpg/v1/crop/x_0,y_36,w_800,h_727/fill/w_264,h_240,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Michel.jpg"  ALT="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">MICHEL NOHRA</h3>
+                    <p class="card-role">Lead Game Designer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+
+            <!-- Membre 3 -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/11d9b5_4e43ed00a7db4b31a6b0c4108598f3ad~mv2.jpeg/v1/crop/x_0,y_17,w_364,h_330/fill/w_265,h_240,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1603819973662.jpeg" ALT="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">THOMAS FRAPPART</h3>
+                    <p class="card-role">Game Designer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+
+            <!-- Membre 4 -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800https://static.wixstatic.com/media/93b2bd_fedda019378e48dfb0d1adc403d1d471~mv2.jpg/v1/crop/x_0,y_7,w_200,h_185/fill/w_259,h_240,al_c,lg_1,q_80,enc_avif,quality_auto/Thibault_jfif.jpg" ALT="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">THIBAULT LEBLAN</h3>
+                    <p class="card-role">Level Designer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+
+            <!-- Membre 5 -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_33ddc68b92a74d4bb303338be47a603c~mv2.png/v1/crop/x_37,y_0,w_234,h_236/fill/w_238,h_240,al_c,lg_1,q_85,enc_avif,quality_auto/Victor_PNG.png" ALT="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">VICTOR DELEARD</h3>
+                    <p class="card-role">Junior Level & Quest Designer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+        </div>
+    </div>
+<div class="parallax-spacer"></div>
+<!-- equipe 2 -->    
+    <div class="container_card">
+        <div class="team-role">
+            <h2>TECH & PROG</h2>
+        </div>
+        <div class="team-grid">
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_17d99f484e3f4650906559d43071f9af~mv2.jpg/v1/crop/x_0,y_268,w_1050,h_975/fill/w_265,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Tom.jpg" ALT="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">TOM GUILLERMIN</h3>
+                    <p class="card-role">CTO & Lead Programmer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_1b26b74a7904449eb0cced7d59cd037f~mv2.jpg/v1/crop/x_0,y_950,w_2448,h_2314/fill/w_260,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/FLO%202.jpg" ALT="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">FLORIAN TORRES</h3>
+                    <p class="card-role">Senior Gameplay Programmer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_9c5777eb28be460c86fe3da473805087~mv2.jpg/v1/crop/x_0,y_11,w_400,h_378/fill/w_260,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/JEROME.jpg" ALT="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">JEROME VAGLIENTI</h3>
+                    <p class="card-role">Engine Programmer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_b080ad294f744d968d2d0f6074b00191~mv2.jpg/v1/crop/x_0,y_22,w_800,h_757/fill/w_260,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Victor%20B.jpg" ALT="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">VICTOR BOULEZ</h3>
+                    <p class="card-role">Gameplay & UI Programmer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+        </div>
+    </div>
+<div class="parallax-spacer"></div>
+<div class="container_card">
+        <!-- equipe 3 -->
+        <div class="team-role">
+            <h2>ART & ENVIRO</h2>
+        </div>
+        <div class="team-grid">
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_aa5b4daf27af4bb4be971587f73355a3~mv2.jpg/v1/crop/x_0,y_40,w_948,h_880/fill/w_265,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Nicho.jpg" ALT="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">NICHOLAS MAXSON-FRANCOMBE</h3>
+                    <p class="card-role">Art Director</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/11d9b5_1a7f02753b61483d968be5332352c11b~mv2.jpg/v1/crop/x_0,y_0,w_455,h_422/fill/w_265,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/carla_edited.jpg" ALT="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">CARLA DEVEZE</h3>
+                    <p class="card-role">Lead Environment Artist</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_bf32e98c3cb34bdd8ce4f3ef048bfdd6~mv2.jpg/v1/crop/x_0,y_75,w_487,h_461/fill/w_260,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/matou%202_edited.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">MATHIEU COSTAT</h3>
+                    <p class="card-role">Environment & Props Artist</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_e5ecd78aef694692a2c178bd1e5e6955~mv2.jpg/v1/crop/x_0,y_37,w_1024,h_951/fill/w_265,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/ALEX%202.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">ALEXANDRE BRETON</h3>
+                    <p class="card-role">Technical Artist</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+       </div>
+        
+    </div>   
+<div class="parallax-spacer"></div>
+<div class="container_card">
+        <div class="team-role">
+            <h2>CHARA ART, VFX & CINEMATICS</h2>
+        </div>
+        <div class="team-grid">
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_6e45f0fde97547c9a882b212e1efcd4d~mv2.png/v1/crop/x_19,y_0,w_586,h_544/fill/w_265,h_246,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ALAN.png"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">ALAN REYNAUD</h3>
+                    <p class="card-role">Lead Character Artist</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_72335f040a214684bbb5341d2fa702fe~mv2.jpg/v1/crop/x_494,y_0,w_1761,h_1666/fill/w_260,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Amandine%203_edited.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">AMANDINE MAREST</h3>
+                    <p class="card-role">Hair & Technical Character Artist</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_fbf339e7b7a6478f83c570eb04bbd53c~mv2.jpg/v1/crop/x_0,y_22,w_800,h_757/fill/w_260,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Armande.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">ARMANDE LECOINTRE</h3>
+                    <p class="card-role">Technical Character Artist</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_85c91116922f4199b3ee5d00fb071938~mv2.jpg/v1/crop/x_0,y_7,w_200,h_186/fill/w_265,h_246,al_c,lg_1,q_80,enc_avif,quality_auto/Leo_jfif.jpg" alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">LEO PARIS</h3>
+                    <p class="card-role">VFX Artist</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_faa653169c3b43b4bd9c37900fb2d4d4~mv2.jpg/v1/crop/x_0,y_5,w_200,h_189/fill/w_260,h_246,al_c,lg_1,q_80,enc_avif,quality_auto/William_jfif.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">WILLIAM TOMASI</h3>
+                    <p class="card-role">Cinematic Artist</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_10d756aeacae434fa1e61e76022209ed~mv2.jpg/v1/crop/x_0,y_14,w_400,h_371/fill/w_265,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/TRISTAN.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">TRISTAN FLEURY</h3>
+                    <p class="card-role">Cinematic Animator</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_709606f28c3d44e594632389c8b8fc51~mv2.jpg/v1/crop/x_0,y_14,w_246,h_228/fill/w_265,h_246,al_c,lg_1,q_80,enc_avif,quality_auto/Romain.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">ROMAIN CHANUT</h3>
+                    <p class="card-role">Character Artist Intern</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+        </div>
+    </div> 
+<div class="parallax-spacer"></div>
+<div class="container_card">
+        <div class="team-role">
+            <h2>AUDIO</h2>
+        </div>
+        <div class="team-grid">
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/ebe171_cbb8e746f6ca43f68bb76ef48f4b5403~mv2.jpeg/v1/crop/x_598,y_0,w_3739,h_3471/fill/w_265,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Alice__Lorien_-_clair_obscur_Antoine_Billet_-_www_ephemere_eu_-_36.jpeg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">LORIEN TESTARD</h3>
+                    <p class="card-role">Music Composer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/11d9b5_2b58af399ce84d4f8ba2a80811e44d56~mv2.jpg/v1/crop/x_0,y_44,w_1621,h_1534/fill/w_260,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6134_edited.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">MAXANCE PLAYEZ</h3>
+                    <p class="card-role">Principal Sound Designer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_0384c42781004a178051d618b6e4a923~mv2.jpg/v1/crop/x_58,y_196,w_1504,h_1504/fill/w_246,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Olivier_picture.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">OLIVIER PENCHENIER</h3>
+                    <p class="card-role">Technical Sound Designer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/ebe171_b116ca1b12ae4a51af0b4fc9a0c74d93~mv2.jpeg/v1/crop/x_0,y_149,w_4160,h_3862/fill/w_192,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Raphael_ProfilPicture_V3.jpeg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">RAPHAEL JOFFRES</h3>
+                    <p class="card-role">Music Designer & Audio Supervisor</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/ebe171_f0e7b92eafcb45ce8b239b939501802e~mv2.jpeg/v1/crop/x_0,y_86,w_3184,h_3013/fill/w_197,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Alice__Lorien_-_enregsitrement_studio_Antoine_Billet_-_www_ephemere_eu_-_16.jpeg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">ALICE DUPORT-PERCIER</h3>
+                    <p class="card-role">Singer & Vocal Composer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+        </div>
+        <!-- equipe 6 -->
+    </div>
+<div class="parallax-spacer"></div>
+</div>    
+    <div class="container_card">
+        <div class="team-role">
+            <h2>PRODUCTION & OPERATIONS</h2>
+        </div>
+        <div class="team-grid">
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/11d9b5_fffe2215bed548f2965d5c7b97e15364~mv2.jpg/v1/crop/x_0,y_17,w_461,h_428/fill/w_265,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Capture%2520d%25E2%2580%2599e%25CC%2581cran%25202021-06-05%2520a%25CC%2580%252018_19_edited.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">FRANCOIS MEURISSE</h3>
+                    <p class="card-role">COO & Producer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/11d9b5_ebacdc5bcbab40ae946c750fb90d3d29~mv2.jpg/v1/crop/x_0,y_18,w_559,h_519/fill/w_265,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/photo_vincent_edited.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">VINCENT CONSTANTIN-TURKI</h3>
+                    <p class="card-role">Producer</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_165877e924ed48578a95eddfb2d4237f~mv2.png/v1/crop/x_0,y_13,w_500,h_473/fill/w_260,h_246,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/EmmaDelage.png"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">EMMA DELAGE</h3>
+                    <p class="card-role">Marketing Director</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_d1a1beaca93446a193744627b37ec2c6~mv2.jpg/v1/crop/x_0,y_21,w_593,h_550/fill/w_265,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/pauline.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">PAULINE MAUCHOFFE</h3>
+                    <p class="card-role">Operations & Finance Lead</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_d19005c8c97e49db8de4e16fd4add8fa~mv2.jpg/v1/crop/x_0,y_63,w_1784,h_1656/fill/w_265,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Emily.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">EMILIE PEREZ</h3>
+                    <p class="card-role">Admin & Office Manager</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_729a63e303f94ab7a2cb34b1b7eb26b4~mv2.jpg/v1/crop/x_0,y_14,w_400,h_371/fill/w_265,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Naja_edited.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">NAJA DALMAGNE</h3>
+                    <p class="card-role">QA Coordinator</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_20923db5efde4da1acabd27054b23fdc~mv2.jpg/v1/crop/x_111,y_0,w_1031,h_1262/fill/w_201,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Junior%202.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">ROGER KAMGA</h3>
+                    <p class="card-role">Junior Product Manager</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+            <!-- Membre vide -->
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://static.wixstatic.com/media/93b2bd_b5ecbaf229e4407ea147aaa011560a6e~mv2.jpg/v1/crop/x_0,y_147,w_3468,h_4331/fill/w_197,h_246,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Monoco.jpg"  alt="">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-name">MONOCO</h3>
+                    <p class="card-role">Happiness Manager</p>
+                </div>
+                <div class="card-accent-line"></div>
+            </div>
+        </div>
+    </div>
+<div class="parallax-spacer"></div>
+section class="content-block">
  <form>
 	 <h1>Contact</h1>
 	 <h2>Nous contacter</h2>
@@ -67,7 +625,7 @@
                 <input type="submit" value="envoyer">
             </div>
         </fieldset>
-        <h5>notre adresse</h5>
+        <h3>notre adresse</h3>
         <p> 28 avenue de Lodève, 34000 Montpellier</p>
     </form>
 </section>
@@ -79,9 +637,9 @@
 <!-- Image de fond parallaxe finale -->
 <div class="parallax"></div>
 <script>
-/* ==========================================================================
-   1. INITIALISATION DU CARROUSEL
-   ========================================================================== */
+/*
+   INITIALISATION DU CARROUSEL
+  */
 
 // Indice de la diapositive actuellement affichée (commence à 1)
 let slideIndex = 1;
@@ -90,9 +648,7 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 
-/* ==========================================================================
-   2. FONCTIONS DE NAVIGATION (ÉVÉNEMENTS)
-   ========================================================================== */
+/* 2. FONCTIONS DE NAVIGATION (ÉVÉNEMENTS) */
 
 /**
  * Avance ou recule d'un nombre 'n' de diapositives (boutons Précédent / Suivant)
@@ -109,9 +665,7 @@ function currentSlide(n) {
 }
 
 
-/* ==========================================================================
-   3. MOTEUR D'AFFICHAGE DU SLIDESHOW
-   ========================================================================== */
+/* MOTEUR D'AFFICHAGE DU SLIDESHOW */
 
 /**
  * Gère le masquage/affichage des images et la mise à jour des points de navigation
@@ -144,6 +698,20 @@ function showSlides(n) {
   // Affiche la diapositive courante et active le point correspondant
   slides[slideIndex - 1].style.display = "block";  
   dots[slideIndex - 1].className += " active";
+}
+
+function openNav() {
+  // Ouvre la sidebar
+  document.getElementById("mySidenav").style.width = "250px";
+  // Cache le bouton "MENU" de gauche
+  document.getElementById("openBtn").style.display = "none";
+}
+
+function closeNav() {
+  // Ferme la sidebar
+  document.getElementById("mySidenav").style.width = "0";
+  // Fait réapparaître le bouton "MENU" de gauche
+  document.getElementById("openBtn").style.display = "block";
 }
 </script>
 	
